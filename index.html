@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    	<meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="todostyle.css">
+    </head>
+    <body>
+        <div class="todolist">
+            <h1 class="todolist__title">to do list</h1>
+            <div class="todo__input">
+                    <input class="input__text" type="text" name="item" placeholder="Добавить задачу в список дел..">
+                    <span class="input__btn">
+                        <img src="img/plus.png" alt="">
+                    </span>
+            </div>
+            <div class="main">
+                <div class="accordion">
+                    <div class="active accordion__box">
+                        <div class="box-title" data-div-title="active">
+                            <input type="checkbox" id="accept" value="no" class="high-checkbox" data-index="${index}">
+                            <label for="accept" class="label-for-high-checkbox"></label>
+                            <h5 class="accordion-title">Активные</h5>
+                            <img class="arrow arrow-active" src="img/arrow-active.png" alt="">
+                        </div>
+                        <div class="active-tasks-div box-tasks"></div>
+                    </div>
+                    <div class="completed accordion__box">
+                        <div class="box-title" data-div-title="completed">
+                            <div id="clearCompleted" class="accordion-icon" data-title="Очистить завершённые задачи"></div>
+                            <h5 class="accordion-title">Завершённые</h5>
+                            <img class="arrow arrow-completed arrowTransform" src="img/arrow-completed.png" alt="">
+                        </div>
+                        <div class="completed-tasks-div box-tasks accordion-hidden" data-title="Список пуст"></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right-inside">
+                        <div class="note">*Нажми на цветной круг, чтобы отфильтровать задачи по категории</div>
+                        <div class="category firstCategory" data-title="Двойным кликом отредактируй название категории"><div class="color red-color color-circle" id="1" data-color="rgba(250, 128, 114, 0.8)"></div><textarea readonly name="red" id="1" cols="20" rows="1" class="theme">Cрочная задача</textarea></div>
+                        <div class="category"><div class="color purple-color color-circle" id="2" data-color="rgba(216, 191, 216, 0.8)"></div><textarea readonly name="purple" id="2" cols="20" rows="1" class="theme">Работа</textarea></div>
+                        <div class="category"><div class="color blue-color color-circle" id="3" data-color="rgba(148, 207, 208, 0.8)"></div><textarea readonly name="blue" id="3" cols="20" rows="1" class="theme">Дом</textarea></div>
+                        <div class="category"><div class="color green-color color-circle" id="4" data-color="rgba(67, 164, 126, 0.8)"></div><textarea readonly name="green" id="4" cols="20" rows="1" class="theme">Магазин</textarea></div>
+                        <div class="category"><div class="color grey-color color-circle" id="5" data-color="rgba(192, 192, 192, 0.8)"></div><textarea readonly name="grey" id="5" cols="20" rows="1" class="theme">Своя категория</textarea></div>
+                        <div class="category lastCategory" data-title="Название не редактируется"><div class="color inherit-color color-circle" id="6" data-color="inherit"></div><textarea readonly name="grey" id="5" cols="20" rows="1" class="theme-nochange">Без категории</textarea></div>
+                        <div class="flex-line">
+                            <div class="completed-icon" data-title="Завершить задачи"></div>
+                            <div class="remove-icon" data-title="Удалить задачи"></div>
+                            <div class="icon-and-modal">
+                                <div class="all-color" data-color-index="${index}">
+                                    <dl class="color red-color"></dl>
+                                    <dl class="color purple-color"></dl>
+                                    <dl class="color blue-color"></dl>
+                                    <dl class="color green-color"></dl>
+                                    <dl class="color grey-color"></dl>
+                                    <dl class="color inherit-color"></dl>
+                                </div>
+                                <div class="color-icon" data-index-color-icon="${index}" data-title="Изменить цвет"></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <script src="todoscript.js"></script>
+    </body>
+</html>
